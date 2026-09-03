@@ -1,23 +1,24 @@
 #include <iostream> 
 #include <string> 
 #include <utility> 
+using namespace std;
  
 class Vehicle { 
 protected: 
-    std::string registrationNumber; 
+    string registrationNumber; 
     double ratePerDay; 
  
 public: 
-    Vehicle(std::string registration, double rate) 
-        : registrationNumber(std::move(registration)), ratePerDay(rate) {} 
+    Vehicle(string registration, double rate) 
+        : registrationNumber(move(registration)), ratePerDay(rate) {} 
  
     virtual double calculateRent(int days) const { 
         return ratePerDay * days; 
     } 
- 
+ +
     virtual void display() const { 
-        std::cout << "Registration: " << registrationNumber << '\n'; 
-        std::cout << "Rate per day: " << ratePerDay << '\n'; 
+        cout << "Registration: " << registrationNumber << '\n'; 
+        cout << "Rate per day: " << ratePerDay << '\n'; 
     } 
  
     virtual ~Vehicle() = default; 
@@ -28,7 +29,7 @@ private:
     int numberOfDoors; 
  
 public: 
-    Car(std::string registration, double rate, int doors) 
+    Car(string registration, double rate, int doors) 
         : Vehicle(std::move(registration), rate), numberOfDoors(doors) {} 
  
     void display() const override { 
