@@ -31,7 +31,7 @@ public:
         : Academic(academic), Sports(sports) {} 
  
     void showTotal() const { 
-        std::cout << "Total Marks: " << academicMarks + sportsMarks << '\n'; 
+        cout << "Total Marks: " << academicMarks + sportsMarks << '\n'; 
     } 
 }; 
  
